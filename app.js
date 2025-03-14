@@ -42,7 +42,7 @@ const alarm = new Audio(
 );
 
 let counterP = 0;
-let totalP = 0;
+let totalP = +localStorage.getItem("totalps");
 let timer;
 
 const setTotalCounter = function () {
@@ -111,14 +111,14 @@ const addTask = function () {
   if (inputBox.value === "") console.log("empty");
   else {
     let li = document.createElement("li");
-    li.innerHTML = `${inputBox.value} &xrarr; ${+inputNumber.value}`;
+    li.innerHTML = `${inputBox.value} &xrarr; ${+inputNumber.value} pomodoros`;
     listContainer.appendChild(li);
     let span = document.createElement("span");
     span.innerHTML = "\u00d7";
     li.appendChild(span);
   }
   inputBox.value = "";
-  savaData();
+  saveData();
 };
 
 const saveNumber = function () {
@@ -128,34 +128,46 @@ const saveNumber = function () {
   pomodoroCounter.textContent = `${String(counterP).padStart(2, 0)}/${String(
     totalP
   ).padStart(2, 0)}`;
+  localStorage.setItem("totalps", totalP);
+
   inputNumber.value = "";
 };
 
 btnAdd.addEventListener("click", () => {
   addTask();
   saveNumber();
+  saveData();
 });
 
 document.addEventListener("keydown", function (e) {
   if (e.key === "Enter") {
     addTask();
     saveNumber();
-    savaData();
+    saveData();
   }
 });
 
 listContainer.addEventListener("click", function (e) {
   if (e.target.tagName === "SPAN") {
     e.target.parentElement.remove();
-    savaData();
+    const pToDelete = Number(
+      e.target.parentElement.innerHTML.split("⟶ ")[1].slice(0, 2)
+    );
+
+    totalP = totalP - pToDelete;
+
+    localStorage.setItem("totalps", totalP);
+    localStorage.getItem("totalPs");
+    setTotalCounter();
+    saveData();
   } else if (e.target.tagName === "LI") {
     e.target.classList.toggle("checked");
-    savaData();
+    saveData();
   }
 });
 
 // sava data
-function savaData() {
+function saveData() {
   localStorage.setItem("data", listContainer.innerHTML);
 }
 
@@ -190,17 +202,17 @@ document.addEventListener("keydown", function (e) {
 
 closeModalBtn.addEventListener("click", closeModal);
 
-// Change Patti
+// Change Hero Img
 
-const patti = document.querySelector(".patti");
+const hero_img = document.querySelector(".hero_img");
 
-patti.addEventListener("click", function () {
-  if (patti.src.endsWith("images/red_patti.png")) {
-    patti.src = "images/patti_blue.png";
-  } else if (patti.src.endsWith("images/patti_blue.png")) {
-    patti.src = "images/patti_white.png";
+hero_img.addEventListener("click", function () {
+  if (hero_img.src.endsWith("images/img_red.png")) {
+    hero_img.src = "images/img_blue.png";
+  } else if (hero_img.src.endsWith("images/img_blue.png")) {
+    hero_img.src = "images/img_white.png";
   } else {
-    patti.src = "images/red_patti.png";
+    hero_img.src = "images/img_red.png";
   }
 });
 
@@ -208,7 +220,7 @@ patti.addEventListener("click", function () {
 const body = document.body;
 const colorBtns = document.querySelectorAll(".colorbtn");
 const svgs = document.querySelectorAll(".svg");
-const thirdBoxes = document.querySelectorAll(".third-box");
+const thirdBoxes = document.querySelectorAll(".border-box");
 let paletteIndex = 0;
 
 // Colors array
@@ -251,4 +263,4 @@ const changePalette = () => {
   init();
 };
 
-patti.addEventListener("click", changePalette);
+hero_img.addEventListener("click", changePalette);

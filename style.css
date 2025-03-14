@@ -21,7 +21,7 @@ body {
 }
 
 .hidden-box {
-  width: 20%;
+  width: 25%;
   height: 100vh;
   left: 0;
   top: 0;
@@ -31,12 +31,17 @@ body {
   align-items: center;
   display: flex;
   z-index: 100;
-  padding: 10px;
+  padding: 15px;
+}
+
+.intro-title {
+  margin-bottom: 10px;
 }
 
 .intro-text-box li {
   margin-top: 7px;
   margin-bottom: 7px;
+  list-style: none;
 }
 
 .close-intro {
@@ -68,7 +73,7 @@ body {
 }
 
 .box {
-  border: 2px solid red;
+  /* border: 2px solid red; */
   padding: 2px;
 }
 
@@ -124,6 +129,7 @@ body {
 
 .todayDate {
   display: block;
+  font-weight: 800;
 }
 
 .open-btn {
@@ -151,18 +157,20 @@ body {
   }
 }
 
-.patti {
-  top: 0;
-  left: 0;
-  z-index: 10;
-  object-fit: contain;
-  height: 100%;
-  cursor: pointer;
-  transform: scale(1);
-  transition: ease-in-out;
+.img-div {
+  text-align: center;
 }
 
-.patti:hover {
+.hero_img {
+  object-fit: contain;
+  height: 80%;
+  cursor: pointer;
+  transform: scale(1);
+
+  transition: all 0.5s ease-in-out;
+}
+
+.hero_img:hover {
   transform: scale(1.1);
 }
 
@@ -193,8 +201,10 @@ body {
 }
 .timer {
   z-index: 5;
-  padding: 5px;
+  padding: 15px;
   margin-right: 50px;
+  border: 1px solid red;
+  border-radius: 12px;
 }
 
 .timerDisplay {
@@ -203,8 +213,14 @@ body {
 }
 
 .pomodoro-counter-box {
-  padding: 5px;
+  padding: 10px;
   text-align: center;
+  border: 1px solid red;
+  border-radius: 12px;
+}
+
+.counter-title {
+  margin-bottom: 12px;
 }
 
 .pomodoro-counter,
@@ -240,8 +256,11 @@ body {
 
   height: 100%;
   width: 100%;
-  padding: 10px;
+  padding: 15px;
   padding-top: 10%;
+  justify-items: center;
+  border: 1px solid red;
+  border-radius: 12px;
 }
 .todo-box {
   height: 100%;
@@ -272,18 +291,27 @@ input,
 }
 
 .input__number {
-  width: 40px;
+  width: 80px;
   text-align: center;
 }
 
 .todo-row button {
   width: 30px;
+  color: green;
+}
+
+#button-add:hover {
+  color: green;
 }
 
 .todo-row button:hover {
   cursor: pointer;
+
   background: red;
-  color: #ffffea;
+}
+
+.list-container {
+  width: 90%;
 }
 
 ul li {
@@ -292,7 +320,6 @@ ul li {
   position: relative;
   padding: 4px 0px 4px;
   cursor: pointer;
-  width: 60%;
 }
 
 ul li::before {
@@ -372,6 +399,10 @@ ul li span:hover {
 
 .hidden {
   display: none;
+}
+
+.colorbtn {
+  transition: all 0.4s ease-in-out;
 }
 
 .colorbtn:hover {

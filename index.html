@@ -15,18 +15,21 @@
     <div class="hidden-box hidden">
       <span class="close-intro">&times</span>
       <div class="intro-text-box">
-        <h2>how to use this app</h2>
+        <h2 class="intro-title">How to Use This App</h2>
         <p>
-          I realised that when i felt overwhelmed about the amount of tasks I
-          had to do in a day it helped to plan the amount of pomodoros I wanted
-          to dedicate to each task. <br />
-          Cutting them up into 25min chunks make it seem a lot more manageable. <br />
-          So I created this minimalist web-app, integrating a to-do list with a pomodoro timer. 
+          
+          I found that when I felt overwhelmed by the number of tasks in a day, it really helped to plan how many Pomodoros I wanted to dedicate to each one.<br />
+          Breaking tasks into 25-minute chunks made everything feel much more manageable.<br />
+          <br />
+          So, I built this minimalist productivity tool—a simple to-do list integrated with a Pomodoro timer to help you stay focused and in control.<br />
+          
+         
           <ol>
-            <li>1. In the to-do list assign the number of pomodoros you want to dedicate to the task</li>
-            <li>2. The total counter will update with the total pomodoros</li>
-            <li>3. Use the 25min timer</li>
-            <li>4. Each time you finish a pomodoro it will automatically update in the counter</li>
+            <li>1. Add your tasks to the to-do list and assign the number of Pomodoros you'd like to dedicate to each.
+            </li>
+            <li>2. The total Pomodoro counter will update automatically.</li>
+            <li>3. Use the built-in 25-minute timer to stay on track.</li>
+            <li>4. Each time you complete a Pomodoro, it updates in the total counter—no extra clicks needed.</li>
           </ol>
           
         </p>
@@ -34,21 +37,10 @@
     </div>
     <div class="box-container">
       <div class="half-box box">
-        <div class="mid-box mid-one box">
-          <div class="col-1-of-2 box">
-            <div class="open-btn">></div>
-            <div class="welcome-msg-box">
-              <span class="todayDate"></span>
-              <span class="welcome-msg">Hi user, welcome to today 001_</span>
-            </div>
-          </div>
-          <div class="col-1-of-2 box patti-div">
-            <img src="images/red_patti.png" alt="patti red" class="patti" />
-          </div>
-        </div>
         <div class="mid-box mid-two box">
+          <div class="open-btn">></div>
           <div class="box timer-box">
-            <div class="timer box">
+            <div class="timer box border-box">
               <p>Pomodoro timer</p>
               <p class="timerDisplay">25:00</p>
               <button for="timer" class="timer-button colorbtn">Start</button>
@@ -57,18 +49,31 @@
                 Reset Timer
               </button>
             </div>
-            <div class="pomodoro-counter-box box">
-              Total Counter <br />
+            <div class="pomodoro-counter-box box border-box">
+              <div class="counter-title">Total Counter <br /></div>
               <div class="pomodoro-counter"></div>
               <button class="colorbtn counter-button">Reset Total</button>
             </div>
           </div>
         </div>
+        <div class="mid-box mid-one box">
+          <div class="col-1-of-2 box">
+            
+            <div class="welcome-msg-box">
+              <span class="todayDate"></span>
+              <span class="welcome-msg">Let's get things done. Welcome to your daily focus zone</span>
+            </div>
+          </div>
+          <div class="col-1-of-2 box img-div">
+            <img src="images/img_red.png" alt="hero image" class="hero_img" />
+          </div>
+        </div>
+        
       </div>
       <div class="half-box box">
         <div class="box todo-box">
           <div class="todo-app-outside">
-            <div class="todo-app">
+            <div class="todo-app border-box">
               <p>To-Do List</p>
               <div class="todo-row">
                 <input
@@ -80,6 +85,7 @@
                 <input
                   type="number"
                   class="input__number colorbtn"
+                  placeholder="nº of pomodoros"
                   max="12"
                   min="0"
                 />
