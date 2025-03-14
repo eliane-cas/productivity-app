@@ -14,10 +14,20 @@ body {
   font-family: "Roboto Mono";
   font-size: 12px;
   padding: 20px;
-
   display: flex;
-
   justify-content: center;
+}
+
+@media only screen and (max-width: 1200px) {
+  body {
+    font-size: 14px;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  body {
+    font-size: 16px;
+  }
 }
 
 .hidden-box {
@@ -32,6 +42,18 @@ body {
   display: flex;
   z-index: 100;
   padding: 15px;
+}
+
+@media only screen and (max-width: 1100px) {
+  .hidden-box {
+    width: 35%;
+  }
+}
+
+@media only screen and (min-width: 650px) {
+  .hidden-box {
+    width: 45%;
+  }
 }
 
 .intro-title {
@@ -66,9 +88,20 @@ body {
   justify-content: center;
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 1200px) {
+  .box-container {
+    width: 90vw;
+  }
+}
+@media only screen and (max-width: 1075px) {
   .box-container {
     width: 100vw;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .box-container {
+    width: 90vw;
   }
 }
 
@@ -79,17 +112,17 @@ body {
 
 .half-box {
   /* display: flex; */
-  width: 100%;
+  width: 50%;
   height: 90%;
   align-items: stretch;
   justify-content: stretch;
   /* background-color: blue; */
 }
 
-@media (min-width: 800px) {
-  .half-box.box {
-    width: 50%;
-    /* background-color: red; */
+@media only screen and (max-width: 1000px) {
+  .half-box {
+    width: 100%;
+    height: 40vh;
   }
 }
 
@@ -121,6 +154,12 @@ body {
 .welcome-msg-box {
   margin-top: 30%;
   margin-left: 10px;
+}
+
+@media only screen and (max-width: 1000px) {
+  .welcome-msg-box {
+    margin-top: 15px;
+  }
 }
 
 .welcome-msg {
@@ -205,6 +244,13 @@ body {
   margin-right: 50px;
   border: 1px solid red;
   border-radius: 12px;
+  text-align: center;
+}
+
+@media only screen and (max-width: 1000px) {
+  .timer {
+    width: 30%;
+  }
 }
 
 .timerDisplay {
@@ -217,6 +263,12 @@ body {
   text-align: center;
   border: 1px solid red;
   border-radius: 12px;
+}
+
+@media screen and (max-width: 1000px) {
+  .pomodoro-counter-box {
+    width: 30%;
+  }
 }
 
 .counter-title {
@@ -262,6 +314,13 @@ body {
   border: 1px solid red;
   border-radius: 12px;
 }
+
+@media only screen and (max-width: 1000px) {
+  .todo-app {
+    padding-top: 10px;
+  }
+}
+
 .todo-box {
   height: 100%;
   width: 100%;
@@ -403,6 +462,19 @@ ul li span:hover {
 
 .colorbtn {
   transition: all 0.4s ease-in-out;
+}
+
+@media screen and (max-width: 1000px) {
+  .colorbtn {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .colorbtn {
+    font-size: 14px;
+    color: blue;
+  }
 }
 
 .colorbtn:hover {

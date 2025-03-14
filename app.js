@@ -98,6 +98,7 @@ resetTimerBtn.addEventListener("click", function () {
 // total pomodoros
 counterResetTotal.addEventListener("click", function () {
   totalP = 0;
+  localStorage.setItem("totalps", totalP);
   setTotalCounter();
 });
 
