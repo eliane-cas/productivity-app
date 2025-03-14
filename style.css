@@ -1,0 +1,409 @@
+/* :root {
+  ---color-primary-background: #ffffff;
+  --color-primary-text: #0000ff;
+} */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* transition: all 30ms ease-in-out; */
+}
+
+body {
+  font-family: "Roboto Mono";
+  font-size: 12px;
+  padding: 20px;
+
+  display: flex;
+
+  justify-content: center;
+}
+
+.hidden-box {
+  width: 20%;
+  height: 100vh;
+  left: 0;
+  top: 0;
+  background-color: rgb(255, 255, 234);
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  z-index: 100;
+  padding: 10px;
+}
+
+.intro-text-box li {
+  margin-top: 7px;
+  margin-bottom: 7px;
+}
+
+.close-intro {
+  position: absolute;
+  font-size: 2rem;
+  top: 0.3rem;
+  right: 1rem;
+  /* color: red; */
+  cursor: pointer;
+}
+
+.close-intro:hover {
+  color: black;
+}
+
+.box-container {
+  width: 80vw;
+  height: 90vh;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  justify-content: center;
+}
+
+@media only screen and (max-width: 800px) {
+  .box-container {
+    width: 100vw;
+  }
+}
+
+.box {
+  border: 2px solid red;
+  padding: 2px;
+}
+
+.half-box {
+  /* display: flex; */
+  width: 100%;
+  height: 90%;
+  align-items: stretch;
+  justify-content: stretch;
+  /* background-color: blue; */
+}
+
+@media (min-width: 800px) {
+  .half-box.box {
+    width: 50%;
+    /* background-color: red; */
+  }
+}
+
+.mid-box {
+  height: 50%;
+  display: flex;
+  position: relative;
+}
+
+.col-1-of-2 {
+  height: 100%;
+  width: 50%;
+}
+
+.bottom-box {
+  width: 100%;
+  height: 10%;
+  position: relative;
+  /* text-align: center; */
+}
+
+.weekday-text-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.welcome-msg-box {
+  margin-top: 30%;
+  margin-left: 10px;
+}
+
+.welcome-msg {
+  display: block;
+}
+
+.todayDate {
+  display: block;
+}
+
+.open-btn {
+  display: block;
+  cursor: pointer;
+  font-size: 20px;
+  animation: bounceLeft 3s linear infinite;
+}
+
+@keyframes bounceLeft {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateX(0);
+  }
+
+  40% {
+    transform: translateX(-15px);
+  }
+
+  60% {
+    transform: translateX(-10px);
+  }
+}
+
+.patti {
+  top: 0;
+  left: 0;
+  z-index: 10;
+  object-fit: contain;
+  height: 100%;
+  cursor: pointer;
+  transform: scale(1);
+  transition: ease-in-out;
+}
+
+.patti:hover {
+  transform: scale(1.1);
+}
+
+/* DAY OF THE WEEK */
+.day {
+  font-family: "Jacquard 24";
+  opacity: 0.3;
+  font-size: 20px;
+}
+
+.day:hover {
+  color: blue;
+  opacity: 1;
+  cursor: pointer;
+}
+
+/* POMODORO TIMER */
+
+.timer-box {
+  height: 100%;
+  width: 100%;
+  display: flex;
+
+  position: relative;
+
+  justify-content: center;
+  align-items: center;
+}
+.timer {
+  z-index: 5;
+  padding: 5px;
+  margin-right: 50px;
+}
+
+.timerDisplay {
+  font-size: 25px;
+  margin: 0;
+}
+
+.pomodoro-counter-box {
+  padding: 5px;
+  text-align: center;
+}
+
+.pomodoro-counter,
+.counter-button {
+  display: inline;
+}
+
+.timer-button,
+.pause-button,
+.reset-button,
+.counter-button {
+  /* color: red; */
+  background: none;
+  padding: 3px;
+  border: 1px solid;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 9px;
+}
+
+/* TODO APP */
+.todo-app-outside {
+  /* clip-path: polygon(0 6%, 6% 0%, 24% 0%, 30% 6%, 70% 6%, 70% 100%, 0% 100%);
+  background-color: red; */
+  width: 100%;
+  padding: 3px;
+  padding-right: 5px;
+}
+
+.todo-app {
+  /* clip-path: polygon(0 6%, 6% 0%, 24% 0%, 30% 6%, 70% 6%, 70% 100%, 0% 100%);
+  background-color: #ffffea; */
+
+  height: 100%;
+  width: 100%;
+  padding: 10px;
+  padding-top: 10%;
+}
+.todo-box {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.todo-row {
+  display: flex;
+  align-items: center;
+}
+
+input,
+.todo-row button {
+  background: transparent;
+  border: 1px solid red;
+  border-radius: 7px;
+  font-size: 10px;
+  color: red;
+  padding: 2px;
+  margin: 2px;
+}
+
+.input__task {
+  padding-left: 10px;
+}
+
+.input__number {
+  width: 40px;
+  text-align: center;
+}
+
+.todo-row button {
+  width: 30px;
+}
+
+.todo-row button:hover {
+  cursor: pointer;
+  background: red;
+  color: #ffffea;
+}
+
+ul li {
+  list-style: none;
+  font-size: 10px;
+  position: relative;
+  padding: 4px 0px 4px;
+  cursor: pointer;
+  width: 60%;
+}
+
+ul li::before {
+  content: "";
+  position: absolute;
+}
+
+ul li.checked {
+  text-decoration: line-through;
+  opacity: 0.4;
+}
+
+ul li span {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  right: 5px;
+  top: 0;
+  /* color: red; */
+  font-size: 20px;
+  text-align: center;
+  border-radius: 50%;
+  line-height: 20px;
+
+  padding: auto 0;
+}
+
+ul li span:hover {
+  background: red;
+  color: beige;
+}
+
+/* MODAL WINDOW */
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 1000;
+  width: 30rem;
+  height: 15rem;
+  background-color: rgb(255, 255, 234);
+  border: 2px solid red;
+  border-radius: 10px;
+  box-shadow: 0 4rem 6rem rgba(0, 0, 0, 0.3);
+
+  text-align: center;
+  padding: 5rem;
+
+  transform: translate(-50%, -50%);
+  transition: all 0.5s;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(4px);
+  z-index: 100;
+  transition: all 0.5s;
+}
+
+.close-modal {
+  position: absolute;
+  font-size: 1.5rem;
+  text-decoration: none;
+  top: 0.3rem;
+  right: 1rem;
+  cursor: pointer;
+}
+
+.close-modal:hover {
+  color: black;
+}
+
+.hidden {
+  display: none;
+}
+
+.colorbtn:hover {
+  cursor: pointer;
+  transform: translateY(-2px);
+}
+
+.laptop-icon img {
+  display: block;
+  height: 5rem;
+  align-self: center;
+  align-content: center;
+  margin: auto;
+  padding-top: 2rem;
+  cursor: pointer;
+  animation: bounceUp 3s linear infinite;
+}
+
+@keyframes bounceUp {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+
+  40% {
+    transform: translateY(-15px);
+  }
+
+  60% {
+    transform: translateY(-10px);
+  }
+}

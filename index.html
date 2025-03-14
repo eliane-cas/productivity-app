@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>To-Day</title>
+    <link rel="shortcut icon" type="image/png" href="/images/17288166.png" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jacquard+24&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../style.css" />
+  </head>
+
+  <body>
+    <div class="hidden-box hidden">
+      <span class="close-intro">&times</span>
+      <div class="intro-text-box">
+        <h2>how to use this app</h2>
+        <p>
+          I realised that when i felt overwhelmed about the amount of tasks I
+          had to do in a day it helped to plan the amount of pomodoros I wanted
+          to dedicate to each task. <br />
+          Cutting them up into 25min chunks make it seem a lot more manageable. <br />
+          So I created this minimalist web-app, integrating a to-do list with a pomodoro timer. 
+          <ol>
+            <li>1. In the to-do list assign the number of pomodoros you want to dedicate to the task</li>
+            <li>2. The total counter will update with the total pomodoros</li>
+            <li>3. Use the 25min timer</li>
+            <li>4. Each time you finish a pomodoro it will automatically update in the counter</li>
+          </ol>
+          
+        </p>
+      </div>
+    </div>
+    <div class="box-container">
+      <div class="half-box box">
+        <div class="mid-box mid-one box">
+          <div class="col-1-of-2 box">
+            <div class="open-btn">></div>
+            <div class="welcome-msg-box">
+              <span class="todayDate"></span>
+              <span class="welcome-msg">Hi user, welcome to today 001_</span>
+            </div>
+          </div>
+          <div class="col-1-of-2 box patti-div">
+            <img src="images/red_patti.png" alt="patti red" class="patti" />
+          </div>
+        </div>
+        <div class="mid-box mid-two box">
+          <div class="box timer-box">
+            <div class="timer box">
+              <p>Pomodoro timer</p>
+              <p class="timerDisplay">25:00</p>
+              <button for="timer" class="timer-button colorbtn">Start</button>
+              <button for="timer" class="pause-button colorbtn">Pause</button>
+              <button for="timer" class="reset-button colorbtn">
+                Reset Timer
+              </button>
+            </div>
+            <div class="pomodoro-counter-box box">
+              Total Counter <br />
+              <div class="pomodoro-counter"></div>
+              <button class="colorbtn counter-button">Reset Total</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="half-box box">
+        <div class="box todo-box">
+          <div class="todo-app-outside">
+            <div class="todo-app">
+              <p>To-Do List</p>
+              <div class="todo-row">
+                <input
+                  type="text"
+                  id="input-box"
+                  placeholder="Add your task"
+                  class="colorbtn input__task"
+                />
+                <input
+                  type="number"
+                  class="input__number colorbtn"
+                  max="12"
+                  min="0"
+                />
+                <button id="button-add" class="colorbtn">Add</button>
+              </div>
+              <ul class="list-container"></ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bottom-box box">
+        <div class="weekday-text-box">
+          <span class="mon day">Mon</span>
+          <span class="tue day">Tue</span>
+          <span class="wed day">Wed</span>
+          <span class="thu day">Thu</span>
+          <span class="fri day">Fri</span>
+          <span class="sat day">Sat</span>
+          <span class="sun day">Sun</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal hidden"><span class="close-modal">&times</span><p>check out my other projects here</p>
+      <div class="laptop-icon"><a href="https://eliane-castelar.netlify.app"><img src="/images/laptop_1615930.png" alt="laptop"></a></div>
+      </div>
+
+    <div class="overlay hidden"></div>
+    <script src="app.js"></script>
+  </body>
+</html>
