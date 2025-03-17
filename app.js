@@ -222,6 +222,7 @@ const body = document.body;
 const colorBtns = document.querySelectorAll(".colorbtn");
 const svgs = document.querySelectorAll(".svg");
 const thirdBoxes = document.querySelectorAll(".border-box");
+const pressBtns = document.querySelectorAll(".pressbtn");
 let paletteIndex = 0;
 
 // Colors array
@@ -242,6 +243,24 @@ const init = function () {
   colorBtns.forEach((btn) => {
     btn.style.color = colorPalettes[paletteIndex][0].primary;
     btn.style.borderColor = colorPalettes[paletteIndex][0].primary;
+    btn.style.background = colorPalettes[paletteIndex][0].background;
+  });
+
+  pressBtns.forEach((btn) => {
+    btn.addEventListener(
+      "mouseover",
+      () => (
+        (btn.style.color = colorPalettes[paletteIndex][0].background),
+        (btn.style.background = colorPalettes[paletteIndex][0].primary)
+      )
+    );
+    btn.addEventListener(
+      "mouseout",
+      () => (
+        (btn.style.color = colorPalettes[paletteIndex][0].primary),
+        (btn.style.background = colorPalettes[paletteIndex][0].background)
+      )
+    );
   });
 
   svgs.forEach((s) => {
@@ -252,6 +271,10 @@ const init = function () {
     (box) => (box.style.borderColor = colorPalettes[paletteIndex][0].primary)
   );
 };
+
+// colorBtns.forEach((btn) =>
+//   btn.addEventListener("mouseover", () => (btn.style.color = "black"))
+// );
 
 init();
 
